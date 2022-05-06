@@ -9,6 +9,7 @@ https://www.markdownguide.org/basic-syntax
 **Todos esses comando possuem flag (complementos) que modificam, acrescentam ou formatam que esses comando sao devolvidos**
 
 - ls //lista de diretorios situados na pasta 
+- pwd //mostra o caminho completo até diretorio atual
 - cd // change directory - permite que navegue pelos diretorios
 - cd / // vai para "pasta mãe"
 - cd nome de uma pasta //vai para pasta desejada
@@ -21,9 +22,6 @@ https://www.markdownguide.org/basic-syntax
 - tab // autocompletar
 - echo hello world // escreve hello world no teminal 
 - echo hello world > hello.txt // cria arquivo de txt chamado hello no repositorio aberto com o texto hello world
-
-
-
 
 ## Tipos de objetos no Git
 SHA1 - Metodologia de criptogrofia usada pelo git que gera um codigo de 40 caracteres(hexadecimal) unica para cada arquivo: se eu alterar o arquivo muda o codigo, se eu desfizer a mudanca em uma nova versao o mesmo codigo anterior é gerado 
@@ -40,3 +38,26 @@ cada um tem seu proprio sha1
   - mais importante
   - junta tudo, dá sentido pra alteracao realizada
   - apontam para uma arvore, um parente (commit anterior), um autor, uma mensagem e um timestamp
+
+## Chave SSH
+
+### Criando
+
+no terminal bash: 
+ssh-keygen -t ed25519 -C email (preferencialmente o mesmo usado no github)
+
+### Acessando
+ir até a pasta usando os comandos acima 
+cat id_ed25519.pub // comando usado pra acessar a chave publica
+copiar chave publica
+
+### Usando chave no github
+settings > SSH and GPG keys > new SSH key > botar um nome para identificar a chave e colar a chave publica gerada no seu terminal > comfirmar
+
+no terminal 
+eval $(ssh-agent -s) // te da um codigo 
+sshadd (+caminho onde está a chave, se ja estiver na pasta pode usar apenas o nome da chave privada)
+
+
+
+
