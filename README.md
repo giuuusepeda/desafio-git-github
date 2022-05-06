@@ -39,12 +39,13 @@ cada um tem seu proprio sha1
   - junta tudo, dá sentido pra alteracao realizada
   - apontam para uma arvore, um parente (commit anterior), um autor, uma mensagem e um timestamp
 
-## Chave SSH
+## Chave SSH 
+https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 ### Criando
 
 no terminal bash: 
-ssh-keygen -t ed25519 -C email (preferencialmente o mesmo usado no github)
+ssh-keygen -t ed25519 -C email (preferencialmente o mesmo usado no github) ele da opcao de criar e confirmar senha 
 
 ### Acessando
 ir até a pasta usando os comandos acima 
@@ -56,7 +57,13 @@ settings > SSH and GPG keys > new SSH key > botar um nome para identificar a cha
 
 no terminal 
 eval $(ssh-agent -s) // te da um codigo 
-sshadd (+caminho onde está a chave, se ja estiver na pasta pode usar apenas o nome da chave privada)
+sshadd (+caminho onde está a chave, se ja estiver na pasta pode usar apenas o nome da chave privada) pode pedir senha 
+
+escolher a pasta aonde quer clonar o diretorio do git 
+no terminal 
+git clone + chave ssh gerada no diretorio do github (botao verdinho copy na pagina do diretorio) 
+parece que da erro na 1a vez que usa a chave mas é só dizer yes que vai 
+
 
 
 
